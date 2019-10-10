@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -47,4 +48,26 @@ public class MainView extends View {
             Log.d("error", "never come here");
         }
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        int x = (int)event.getX();
+        int y = (int)event.getY();
+
+        //長方形の内部で
+        if(x>100 && x<300 && y>100 && y<200){
+            if(state == FIRST) {  //状態が1だったら状態2へ
+                state = SECOND;
+            } else if(state == SECOND) {  //状態2だったら状態1へ
+                state = FIRST;
+            } else {  //それ以外だったらエラーを吐き出す
+                Log.d("error", "never come here");
+            }
+        }
+
+        invalidate();  //再描画
+        return super.onTouchEvent(event);
+    }
+
+
 }
