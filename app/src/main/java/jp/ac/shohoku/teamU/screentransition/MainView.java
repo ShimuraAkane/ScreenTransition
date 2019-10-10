@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 public class MainView extends View {
     public final int FIRST = 1;  //状態を表す定数 1
     public final int SECOND = 2; //状態を表す定数 2
-    int state;  //状態を表す変数
+    int state = FIRST;  //状態を表す変数
 
     public MainView(Context context) {
         super(context);
