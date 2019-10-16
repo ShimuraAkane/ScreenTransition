@@ -8,7 +8,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import androidx.annotation.Nullable;
 
 /**
   * 一つの Activty，一つの View で状態遷移する場合
