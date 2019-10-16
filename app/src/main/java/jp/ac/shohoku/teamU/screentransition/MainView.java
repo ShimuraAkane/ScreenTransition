@@ -8,34 +8,33 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-
 import androidx.annotation.Nullable;
 
+/**
+  * 一つの Activty，一つの View で状態遷移する場合
+  * Created by utsumi on 2015/10/20.
+  */
 public class MainView extends View {
     public final int FIRST = 1;  //状態を表す定数 1
     public final int SECOND = 2; //状態を表す定数 2
+
     int state;  //状態を表す変数
 
-    public MainView(Context context) {
-        super(context);
-    }
-
-    public MainView(Context context, @Nullable AttributeSet attrs) {
+    /**
+     * コンストラクタ
+     * @param context
+     * @param attrs
+     */
+    public MainView(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public MainView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-    public MainView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        state = FIRST; // はじめは状態1
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint p = new Paint();
+
         if (state == FIRST) {  //状態1の場合の描画
             p.setColor(Color.BLUE);
             canvas.drawARGB(255, 255, 255, 255);
