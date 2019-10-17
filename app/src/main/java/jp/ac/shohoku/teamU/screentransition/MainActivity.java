@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_view);
         // ボタルを押したときにイベントを取得できるようにする
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new OnClickListener(){
